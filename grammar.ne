@@ -1,7 +1,12 @@
 @builtin "whitespace.ne"
 
 CodeTalk -> Slide:+
-Slide -> Word:+ (Separator | Done)
-Word -> [a-z] {% id %}
-Separator -> "---" {% id %}
-Done -> __
+Slide -> "PROSE" Newline Indent Word:+ Done
+Newline -> "\n"
+Indent -> "  "
+Space -> " "
+Word -> Letter:+ Space {% function(data) {
+  return data[0].join("")
+} %}
+Letter -> [a-z] {% id %}
+Done -> Newline "END" (Space | Newline)
