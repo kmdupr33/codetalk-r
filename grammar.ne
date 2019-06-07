@@ -1,15 +1,16 @@
-@builtin "whitespace.ne"
-
-CodeTalk -> CodeTalkKeyWord __ Slides Done
+CodeTalk -> CodeTalkKeyWord Newline Slides Done
 CodeTalkKeyWord -> "codetalk"
 Slides -> Slide:+
-Slide -> _ "slide" __ Word:+ __ EndSlide
-EndSlide -> "end" __
-Word -> Letter:+ __ {% function(data) {
+Slide -> Indent "slide" Newline Indent Indent Word:+ Indent EndSlide
+EndSlide -> "end" Newline:+
+Newline -> "\n" {% nuller %}
+Indent -> "  " {% nuller %}
+Space -> " "
+Word -> Letter:+ (Space | Newline) {% function(data) {
   return data[0].join("")
 } %}
 Letter -> [a-z] {% id %}
-Done -> "end" _
+Done -> "end" (Space | Newline):*
 
 
 @{%
