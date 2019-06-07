@@ -2,7 +2,7 @@ const nearley = require("nearley");
 const grammar = require("./grammar.js");
 
 describe("a simple codetalk", () => {
-  const input = "prose\n  hello ";
+  const input = "codetalk\n  hello ";
   let parser;
   beforeAll(() => {
     parser = new nearley.Parser(nearley.Grammar.fromCompiled(grammar), {
