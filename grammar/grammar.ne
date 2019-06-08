@@ -1,7 +1,7 @@
 @builtin "postprocessors.ne"
 
-CodeTalk -> "codetalk" Newline Slide:+ Done {% 
-  data => [data[0]].concat(data[2]).concat(data[3][0]) 
+CodeTalk -> Newline:* "codetalk" Newline Slide:+ Done {% 
+  data => [data[1]].concat(data[3]).concat(data[4][1]) 
 %}
 
 Slide -> Indent "slide" Newline Markdown Indent EndSlide {% 
@@ -10,7 +10,7 @@ Slide -> Indent "slide" Newline Markdown Indent EndSlide {%
 
 # one or more blocks, optionally separated by one or more empty blocks
 Markdown -> Blocks:+
-Blocks -> Block:+ EmptyBlock:*
+Blocks -> Block EmptyBlock:*
 EndSlide -> "end" Newline:+ {% id %}
 # a new line ends a word AND a block
 # if it ends a word, then you can have multiple letters at different indents
@@ -25,10 +25,16 @@ EmptyBlock -> Indent Indent Newline {%
 %}
 Title -> "# " Words {% hash %}
 Subtitle -> "## " Words {% hash %}
-Words -> Word:+ TrailingWord {%
-  data => data[0].join(' ') 
+Words -> Word:* TrailingWord {%
+  data => `${data[0].join(' ')} ${data[1]}`
 %}
-TrailingWord -> Letter:+ Space:*
+TrailingWord -> Letter:+ Space:* {% 
+  data => data[0].join("")
+%}
+
+
+
+
 # how do you know a word is finished?
 # letters separated by spaces followed optionally by a letter with no space at the end
 Word -> Letter:+ Space {% 

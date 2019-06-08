@@ -29,11 +29,13 @@ function $(o) {
 var grammar = {
     Lexer: undefined,
     ParserRules: [
+    {"name": "CodeTalk$ebnf$1", "symbols": []},
+    {"name": "CodeTalk$ebnf$1", "symbols": ["CodeTalk$ebnf$1", "Newline"], "postprocess": function arrpush(d) {return d[0].concat([d[1]]);}},
     {"name": "CodeTalk$string$1", "symbols": [{"literal":"c"}, {"literal":"o"}, {"literal":"d"}, {"literal":"e"}, {"literal":"t"}, {"literal":"a"}, {"literal":"l"}, {"literal":"k"}], "postprocess": function joiner(d) {return d.join('');}},
-    {"name": "CodeTalk$ebnf$1", "symbols": ["Slide"]},
-    {"name": "CodeTalk$ebnf$1", "symbols": ["CodeTalk$ebnf$1", "Slide"], "postprocess": function arrpush(d) {return d[0].concat([d[1]]);}},
-    {"name": "CodeTalk", "symbols": ["CodeTalk$string$1", "Newline", "CodeTalk$ebnf$1", "Done"], "postprocess":  
-        data => [data[0]].concat(data[2]).concat(data[3][0]) 
+    {"name": "CodeTalk$ebnf$2", "symbols": ["Slide"]},
+    {"name": "CodeTalk$ebnf$2", "symbols": ["CodeTalk$ebnf$2", "Slide"], "postprocess": function arrpush(d) {return d[0].concat([d[1]]);}},
+    {"name": "CodeTalk", "symbols": ["CodeTalk$ebnf$1", "CodeTalk$string$1", "Newline", "CodeTalk$ebnf$2", "Done"], "postprocess":  
+        data => [data[1]].concat(data[3]).concat(data[4][1]) 
         },
     {"name": "Slide$string$1", "symbols": [{"literal":"s"}, {"literal":"l"}, {"literal":"i"}, {"literal":"d"}, {"literal":"e"}], "postprocess": function joiner(d) {return d.join('');}},
     {"name": "Slide", "symbols": ["Indent", "Slide$string$1", "Newline", "Markdown", "Indent", "EndSlide"], "postprocess":  
@@ -42,11 +44,9 @@ var grammar = {
     {"name": "Markdown$ebnf$1", "symbols": ["Blocks"]},
     {"name": "Markdown$ebnf$1", "symbols": ["Markdown$ebnf$1", "Blocks"], "postprocess": function arrpush(d) {return d[0].concat([d[1]]);}},
     {"name": "Markdown", "symbols": ["Markdown$ebnf$1"]},
-    {"name": "Blocks$ebnf$1", "symbols": ["Block"]},
-    {"name": "Blocks$ebnf$1", "symbols": ["Blocks$ebnf$1", "Block"], "postprocess": function arrpush(d) {return d[0].concat([d[1]]);}},
-    {"name": "Blocks$ebnf$2", "symbols": []},
-    {"name": "Blocks$ebnf$2", "symbols": ["Blocks$ebnf$2", "EmptyBlock"], "postprocess": function arrpush(d) {return d[0].concat([d[1]]);}},
-    {"name": "Blocks", "symbols": ["Blocks$ebnf$1", "Blocks$ebnf$2"]},
+    {"name": "Blocks$ebnf$1", "symbols": []},
+    {"name": "Blocks$ebnf$1", "symbols": ["Blocks$ebnf$1", "EmptyBlock"], "postprocess": function arrpush(d) {return d[0].concat([d[1]]);}},
+    {"name": "Blocks", "symbols": ["Block", "Blocks$ebnf$1"]},
     {"name": "EndSlide$string$1", "symbols": [{"literal":"e"}, {"literal":"n"}, {"literal":"d"}], "postprocess": function joiner(d) {return d.join('');}},
     {"name": "EndSlide$ebnf$1", "symbols": ["Newline"]},
     {"name": "EndSlide$ebnf$1", "symbols": ["EndSlide$ebnf$1", "Newline"], "postprocess": function arrpush(d) {return d[0].concat([d[1]]);}},
@@ -64,16 +64,18 @@ var grammar = {
     {"name": "Title", "symbols": ["Title$string$1", "Words"], "postprocess": hash},
     {"name": "Subtitle$string$1", "symbols": [{"literal":"#"}, {"literal":"#"}, {"literal":" "}], "postprocess": function joiner(d) {return d.join('');}},
     {"name": "Subtitle", "symbols": ["Subtitle$string$1", "Words"], "postprocess": hash},
-    {"name": "Words$ebnf$1", "symbols": ["Word"]},
+    {"name": "Words$ebnf$1", "symbols": []},
     {"name": "Words$ebnf$1", "symbols": ["Words$ebnf$1", "Word"], "postprocess": function arrpush(d) {return d[0].concat([d[1]]);}},
     {"name": "Words", "symbols": ["Words$ebnf$1", "TrailingWord"], "postprocess": 
-        data => data[0].join(' ') 
+        data => `${data[0].join(' ')} ${data[1]}`
         },
     {"name": "TrailingWord$ebnf$1", "symbols": ["Letter"]},
     {"name": "TrailingWord$ebnf$1", "symbols": ["TrailingWord$ebnf$1", "Letter"], "postprocess": function arrpush(d) {return d[0].concat([d[1]]);}},
     {"name": "TrailingWord$ebnf$2", "symbols": []},
     {"name": "TrailingWord$ebnf$2", "symbols": ["TrailingWord$ebnf$2", "Space"], "postprocess": function arrpush(d) {return d[0].concat([d[1]]);}},
-    {"name": "TrailingWord", "symbols": ["TrailingWord$ebnf$1", "TrailingWord$ebnf$2"]},
+    {"name": "TrailingWord", "symbols": ["TrailingWord$ebnf$1", "TrailingWord$ebnf$2"], "postprocess":  
+        data => data[0].join("")
+        },
     {"name": "Word$ebnf$1", "symbols": ["Letter"]},
     {"name": "Word$ebnf$1", "symbols": ["Word$ebnf$1", "Letter"], "postprocess": function arrpush(d) {return d[0].concat([d[1]]);}},
     {"name": "Word", "symbols": ["Word$ebnf$1", "Space"], "postprocess":  

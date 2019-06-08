@@ -1,0 +1,98 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`codetalk basic.codetalk parses correctly 1`] = `
+Array [
+  Array [
+    "codetalk",
+    Array [
+      "slide",
+      Array [
+        Array [
+          Array [
+            "#",
+            "hello world",
+          ],
+          Array [],
+        ],
+        Array [
+          Array [
+            "##",
+            " goodbye",
+          ],
+          Array [],
+        ],
+        Array [
+          "idk why you say goodbye",
+          Array [],
+        ],
+      ],
+      "end",
+    ],
+    Array [
+      "slide",
+      Array [
+        Array [
+          "goodbye world",
+          Array [],
+        ],
+      ],
+      "end",
+    ],
+  ],
+]
+`;
+
+exports[`codetalk complex.codetalk parses correctly 1`] = `
+Array [
+  Array [
+    "codetalk",
+    Array [
+      "slide",
+      Array [
+        Array [
+          Array [
+            "#",
+            "hello world",
+          ],
+          Array [],
+        ],
+        Array [
+          Array [
+            "##",
+            "this is code talk",
+          ],
+          Array [
+            Array [
+              "
+",
+            ],
+          ],
+        ],
+        Array [
+          "idk why you say goodbye",
+          Array [],
+        ],
+      ],
+      "end",
+    ],
+  ],
+]
+`;
+
+exports[`codetalk hello_world.codetalk parses correctly 1`] = `
+Array [
+  Array [
+    "codetalk",
+    Array [
+      "slide",
+      Array [
+        Array [
+          "hello world",
+          Array [],
+        ],
+      ],
+      "end",
+    ],
+  ],
+]
+`;
