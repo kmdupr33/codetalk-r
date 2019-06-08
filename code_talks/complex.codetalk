@@ -1,10 +1,8 @@
 codetalk
   slide
     # hello world
-    ## goodbye
+    ## this is code talk
+    
     idk why you say goodbye
-  end
-  slide
-    goodbye world
   end
 end
