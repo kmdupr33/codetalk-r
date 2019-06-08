@@ -34,10 +34,12 @@ AnythingButBackTick -> [^`]
 Words -> Word:* TrailingWord {%
   data => `${data[0].join(' ')} ${data[1]}`
 %}
-TrailingWord -> (Letter | Punctuation):+ Space:* {% 
+TrailingWord -> Characters Space:* {% 
+  nth(0)
+%}
+Characters -> (Letter | Punctuation):+ {%
   data => data[0].join("")
 %}
-
 Title -> "# " Words {% hash %}
 Subtitle -> "## " Words {% hash %}
 
@@ -55,8 +57,8 @@ AnythingButCloseParentheses -> [^)]
 Done -> "end" (Space | Newline):*
 
 # Basic build blocks for Words
-Word -> (Letter | Punctuation):+ Space {% 
-  data => data[0].join("")
+Word -> Characters Space {% 
+  nth(0)
 %}
 Letter -> (LowercaseLetter | UppercaseLetter)
 Punctuation -> [\.,':]
