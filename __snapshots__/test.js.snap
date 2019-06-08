@@ -90,6 +90,35 @@ Array [
 ]
 `;
 
+exports[`codetalk images.codetalk parses correctly 1`] = `
+Array [
+  Array [
+    "codetalk",
+    Array [
+      "slide",
+      Array [
+        Array [
+          "Trash makes me sad. Doesn't it make you sad. Here. Check:",
+          Array [
+            Array [
+              "
+",
+            ],
+          ],
+        ],
+        Array [
+          Array [
+            "Codetalk logo",
+            "https://www.philosophicalhacker.com/images/trash.jpg",
+          ],
+        ],
+      ],
+      "end",
+    ],
+  ],
+]
+`;
+
 exports[`codetalk paragraphs.codetalk parses correctly 1`] = `
 Array [
   Array [
