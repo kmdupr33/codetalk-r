@@ -1,0 +1,12 @@
+codetalk
+  slide
+    Here is some code:
+
+    ```javascript
+    import React from 'react';
+    const HelloWorld = ({name}) => {
+      return <p>Hello, {name}</p>
+    };
+    ```
+  end
+end

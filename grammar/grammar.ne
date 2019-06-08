@@ -15,9 +15,19 @@ Blocks -> Block EmptyBlock:* {%
 EmptyBlock -> Indent:? Indent:? Newline {% nth(2) %}
 EndSlide -> "end" Newline:+ {% id %}
 
-Block -> Indent Indent (Words | Title | Subtitle | Image) Newline {% 
+Block -> Indent Indent (Words | Title | Subtitle | CodeBlock | Image) Newline {% 
   data => data[2][0]
 %}
+
+CodeBlock -> CodeFence TrailingWord:? Newline Indent Indent Code CodeFence {%
+  data => data[0].concat(data[1]).concat(data[5])
+%}
+CodeFence -> "```"
+Code -> AnythingButBackTick:+ {%
+  data => data[0].join("")
+%}
+# This won't work if the code includes a backtick; Need to revisit
+AnythingButBackTick -> [^`]
 
 Words -> Word:* TrailingWord {%
   data => `${data[0].join(' ')} ${data[1]}`

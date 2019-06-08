@@ -38,4 +38,12 @@ describe("codetalk", () => {
     const input = readFile('images.codetalk');
     expectToParse(parser, input);
   });
+  test("codeblock.codetalk parses correctly", () => {
+    const input = readFile('codeblock.codetalk');
+    expectToParse(parser, input);
+  });
+  test("meta_codeblock.codetalk parses correctly", () => {
+    const input = readFile('meta_codeblock.codetalk');
+    expectToParse(parser, input);
+  });
 });

@@ -38,6 +38,40 @@ Array [
 ]
 `;
 
+exports[`codetalk codeblock.codetalk parses correctly 1`] = `
+Array [
+  Array [
+    "codetalk",
+    Array [
+      "slide",
+      Array [
+        Array [
+          "Here is some code:",
+          Array [
+            Array [
+              "
+",
+            ],
+          ],
+        ],
+        Array [
+          Array [
+            "\`\`\`",
+            "javascript",
+            "import React from 'react';
+    const HelloWorld = ({name}) => {
+      return <p>Hello, {name}</p>
+    };
+    ",
+          ],
+        ],
+      ],
+      "end",
+    ],
+  ],
+]
+`;
+
 exports[`codetalk complex.codetalk parses correctly 1`] = `
 Array [
   Array [
@@ -110,6 +144,41 @@ Array [
           Array [
             "Codetalk logo",
             "https://www.philosophicalhacker.com/images/trash.jpg",
+          ],
+        ],
+      ],
+      "end",
+    ],
+  ],
+]
+`;
+
+exports[`codetalk meta_codeblock.codetalk parses correctly 1`] = `
+Array [
+  Array [
+    "codetalk",
+    Array [
+      "slide",
+      Array [
+        Array [
+          "Here is some code:",
+          Array [
+            Array [
+              "
+",
+            ],
+          ],
+        ],
+        Array [
+          Array [
+            "\`\`\`",
+            "codetalk",
+            "codetalk
+      slide
+        hello world
+      end
+    end
+    ",
           ],
         ],
       ],

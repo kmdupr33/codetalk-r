@@ -61,10 +61,24 @@ var grammar = {
     {"name": "Block$subexpression$1", "symbols": ["Words"]},
     {"name": "Block$subexpression$1", "symbols": ["Title"]},
     {"name": "Block$subexpression$1", "symbols": ["Subtitle"]},
+    {"name": "Block$subexpression$1", "symbols": ["CodeBlock"]},
     {"name": "Block$subexpression$1", "symbols": ["Image"]},
     {"name": "Block", "symbols": ["Indent", "Indent", "Block$subexpression$1", "Newline"], "postprocess":  
         data => data[2][0]
         },
+    {"name": "CodeBlock$ebnf$1", "symbols": ["TrailingWord"], "postprocess": id},
+    {"name": "CodeBlock$ebnf$1", "symbols": [], "postprocess": function(d) {return null;}},
+    {"name": "CodeBlock", "symbols": ["CodeFence", "CodeBlock$ebnf$1", "Newline", "Indent", "Indent", "Code", "CodeFence"], "postprocess": 
+        data => data[0].concat(data[1]).concat(data[5])
+        },
+    {"name": "CodeFence$string$1", "symbols": [{"literal":"`"}, {"literal":"`"}, {"literal":"`"}], "postprocess": function joiner(d) {return d.join('');}},
+    {"name": "CodeFence", "symbols": ["CodeFence$string$1"]},
+    {"name": "Code$ebnf$1", "symbols": ["AnythingButBackTick"]},
+    {"name": "Code$ebnf$1", "symbols": ["Code$ebnf$1", "AnythingButBackTick"], "postprocess": function arrpush(d) {return d[0].concat([d[1]]);}},
+    {"name": "Code", "symbols": ["Code$ebnf$1"], "postprocess": 
+        data => data[0].join("")
+        },
+    {"name": "AnythingButBackTick", "symbols": [/[^`]/]},
     {"name": "Words$ebnf$1", "symbols": []},
     {"name": "Words$ebnf$1", "symbols": ["Words$ebnf$1", "Word"], "postprocess": function arrpush(d) {return d[0].concat([d[1]]);}},
     {"name": "Words", "symbols": ["Words$ebnf$1", "TrailingWord"], "postprocess": 
