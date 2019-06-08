@@ -46,7 +46,9 @@ var grammar = {
     {"name": "Markdown", "symbols": ["Markdown$ebnf$1"]},
     {"name": "Blocks$ebnf$1", "symbols": []},
     {"name": "Blocks$ebnf$1", "symbols": ["Blocks$ebnf$1", "EmptyBlock"], "postprocess": function arrpush(d) {return d[0].concat([d[1]]);}},
-    {"name": "Blocks", "symbols": ["Block", "Blocks$ebnf$1"]},
+    {"name": "Blocks", "symbols": ["Block", "Blocks$ebnf$1"], "postprocess": 
+        data => data.filter(item => item[0]) // If there are no empty blocks, we don't want them showing up in the parse results
+        },
     {"name": "EndSlide$string$1", "symbols": [{"literal":"e"}, {"literal":"n"}, {"literal":"d"}], "postprocess": function joiner(d) {return d.join('');}},
     {"name": "EndSlide$ebnf$1", "symbols": ["Newline"]},
     {"name": "EndSlide$ebnf$1", "symbols": ["EndSlide$ebnf$1", "Newline"], "postprocess": function arrpush(d) {return d[0].concat([d[1]]);}},
@@ -57,9 +59,7 @@ var grammar = {
     {"name": "Block", "symbols": ["Indent", "Indent", "Block$subexpression$1", "Newline"], "postprocess":  
         data => data[2][0]
         },
-    {"name": "EmptyBlock", "symbols": ["Indent", "Indent", "Newline"], "postprocess": 
-        data => data[2]
-        },
+    {"name": "EmptyBlock", "symbols": ["Indent", "Indent", "Newline"], "postprocess": nth(2)},
     {"name": "Title$string$1", "symbols": [{"literal":"#"}, {"literal":" "}], "postprocess": function joiner(d) {return d.join('');}},
     {"name": "Title", "symbols": ["Title$string$1", "Words"], "postprocess": hash},
     {"name": "Subtitle$string$1", "symbols": [{"literal":"#"}, {"literal":"#"}, {"literal":" "}], "postprocess": function joiner(d) {return d.join('');}},

@@ -10,7 +10,9 @@ Slide -> Indent "slide" Newline Markdown Indent EndSlide {%
 
 # one or more blocks, optionally separated by one or more empty blocks
 Markdown -> Blocks:+
-Blocks -> Block EmptyBlock:*
+Blocks -> Block EmptyBlock:* {%
+  data => data.filter(item => item[0]) // If there are no empty blocks, we don't want them showing up in the parse results
+%}
 EndSlide -> "end" Newline:+ {% id %}
 # a new line ends a word AND a block
 # if it ends a word, then you can have multiple letters at different indents
@@ -20,9 +22,7 @@ EndSlide -> "end" Newline:+ {% id %}
 Block -> Indent Indent (Title | Subtitle | Words) Newline {% 
   data => data[2][0]
 %}
-EmptyBlock -> Indent Indent Newline {%
-  data => data[2]
-%}
+EmptyBlock -> Indent Indent Newline {% nth(2) %}
 Title -> "# " Words {% hash %}
 Subtitle -> "## " Words {% hash %}
 Words -> Word:* TrailingWord {%
