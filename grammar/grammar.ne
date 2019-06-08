@@ -22,13 +22,13 @@ EndSlide -> "end" Newline:+ {% id %}
 Block -> Indent Indent (Title | Subtitle | Words) Newline {% 
   data => data[2][0]
 %}
-EmptyBlock -> Indent Indent Newline {% nth(2) %}
+EmptyBlock -> Indent:? Indent:? Newline {% nth(2) %}
 Title -> "# " Words {% hash %}
 Subtitle -> "## " Words {% hash %}
 Words -> Word:* TrailingWord {%
   data => `${data[0].join(' ')} ${data[1]}`
 %}
-TrailingWord -> Letter:+ Space:* {% 
+TrailingWord -> (Letter | Punctuation):+ Space:* {% 
   data => data[0].join("")
 %}
 
@@ -37,10 +37,11 @@ TrailingWord -> Letter:+ Space:* {%
 
 # how do you know a word is finished?
 # letters separated by spaces followed optionally by a letter with no space at the end
-Word -> Letter:+ Space {% 
+Word -> (Letter | Punctuation):+ Space {% 
   data => data[0].join("")
 %}
 Letter -> (LowercaseLetter | UppercaseLetter)
+Punctuation -> [\.,]
 LowercaseLetter -> [a-z] {% id %}
 UppercaseLetter -> [A-Z] {% id %}
 Done -> "end" (Space | Newline):*

@@ -59,7 +59,11 @@ var grammar = {
     {"name": "Block", "symbols": ["Indent", "Indent", "Block$subexpression$1", "Newline"], "postprocess":  
         data => data[2][0]
         },
-    {"name": "EmptyBlock", "symbols": ["Indent", "Indent", "Newline"], "postprocess": nth(2)},
+    {"name": "EmptyBlock$ebnf$1", "symbols": ["Indent"], "postprocess": id},
+    {"name": "EmptyBlock$ebnf$1", "symbols": [], "postprocess": function(d) {return null;}},
+    {"name": "EmptyBlock$ebnf$2", "symbols": ["Indent"], "postprocess": id},
+    {"name": "EmptyBlock$ebnf$2", "symbols": [], "postprocess": function(d) {return null;}},
+    {"name": "EmptyBlock", "symbols": ["EmptyBlock$ebnf$1", "EmptyBlock$ebnf$2", "Newline"], "postprocess": nth(2)},
     {"name": "Title$string$1", "symbols": [{"literal":"#"}, {"literal":" "}], "postprocess": function joiner(d) {return d.join('');}},
     {"name": "Title", "symbols": ["Title$string$1", "Words"], "postprocess": hash},
     {"name": "Subtitle$string$1", "symbols": [{"literal":"#"}, {"literal":"#"}, {"literal":" "}], "postprocess": function joiner(d) {return d.join('');}},
@@ -69,21 +73,30 @@ var grammar = {
     {"name": "Words", "symbols": ["Words$ebnf$1", "TrailingWord"], "postprocess": 
         data => `${data[0].join(' ')} ${data[1]}`
         },
-    {"name": "TrailingWord$ebnf$1", "symbols": ["Letter"]},
-    {"name": "TrailingWord$ebnf$1", "symbols": ["TrailingWord$ebnf$1", "Letter"], "postprocess": function arrpush(d) {return d[0].concat([d[1]]);}},
+    {"name": "TrailingWord$ebnf$1$subexpression$1", "symbols": ["Letter"]},
+    {"name": "TrailingWord$ebnf$1$subexpression$1", "symbols": ["Punctuation"]},
+    {"name": "TrailingWord$ebnf$1", "symbols": ["TrailingWord$ebnf$1$subexpression$1"]},
+    {"name": "TrailingWord$ebnf$1$subexpression$2", "symbols": ["Letter"]},
+    {"name": "TrailingWord$ebnf$1$subexpression$2", "symbols": ["Punctuation"]},
+    {"name": "TrailingWord$ebnf$1", "symbols": ["TrailingWord$ebnf$1", "TrailingWord$ebnf$1$subexpression$2"], "postprocess": function arrpush(d) {return d[0].concat([d[1]]);}},
     {"name": "TrailingWord$ebnf$2", "symbols": []},
     {"name": "TrailingWord$ebnf$2", "symbols": ["TrailingWord$ebnf$2", "Space"], "postprocess": function arrpush(d) {return d[0].concat([d[1]]);}},
     {"name": "TrailingWord", "symbols": ["TrailingWord$ebnf$1", "TrailingWord$ebnf$2"], "postprocess":  
         data => data[0].join("")
         },
-    {"name": "Word$ebnf$1", "symbols": ["Letter"]},
-    {"name": "Word$ebnf$1", "symbols": ["Word$ebnf$1", "Letter"], "postprocess": function arrpush(d) {return d[0].concat([d[1]]);}},
+    {"name": "Word$ebnf$1$subexpression$1", "symbols": ["Letter"]},
+    {"name": "Word$ebnf$1$subexpression$1", "symbols": ["Punctuation"]},
+    {"name": "Word$ebnf$1", "symbols": ["Word$ebnf$1$subexpression$1"]},
+    {"name": "Word$ebnf$1$subexpression$2", "symbols": ["Letter"]},
+    {"name": "Word$ebnf$1$subexpression$2", "symbols": ["Punctuation"]},
+    {"name": "Word$ebnf$1", "symbols": ["Word$ebnf$1", "Word$ebnf$1$subexpression$2"], "postprocess": function arrpush(d) {return d[0].concat([d[1]]);}},
     {"name": "Word", "symbols": ["Word$ebnf$1", "Space"], "postprocess":  
         data => data[0].join("")
         },
     {"name": "Letter$subexpression$1", "symbols": ["LowercaseLetter"]},
     {"name": "Letter$subexpression$1", "symbols": ["UppercaseLetter"]},
     {"name": "Letter", "symbols": ["Letter$subexpression$1"]},
+    {"name": "Punctuation", "symbols": [/[\.,]/]},
     {"name": "LowercaseLetter", "symbols": [/[a-z]/], "postprocess": id},
     {"name": "UppercaseLetter", "symbols": [/[A-Z]/], "postprocess": id},
     {"name": "Done$string$1", "symbols": [{"literal":"e"}, {"literal":"n"}, {"literal":"d"}], "postprocess": function joiner(d) {return d.join('');}},

@@ -30,4 +30,8 @@ describe("codetalk", () => {
     const input = readFile('./code_talks/complex.codetalk');
     expectToParse(parser, input);
   })
+  test("paragraphs.codetalk parses correctly", () => {
+    const input = readFile('./code_talks/paragraphs.codetalk');
+    expectToParse(parser, input);
+  })
 });
