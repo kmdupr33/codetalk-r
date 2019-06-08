@@ -40,7 +40,9 @@ TrailingWord -> Letter:+ Space:* {%
 Word -> Letter:+ Space {% 
   data => data[0].join("")
 %}
-Letter -> [a-z] {% id %}
+Letter -> (LowercaseLetter | UppercaseLetter)
+LowercaseLetter -> [a-z] {% id %}
+UppercaseLetter -> [A-Z] {% id %}
 Done -> "end" (Space | Newline):*
 
 @{%

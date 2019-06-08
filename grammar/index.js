@@ -81,7 +81,11 @@ var grammar = {
     {"name": "Word", "symbols": ["Word$ebnf$1", "Space"], "postprocess":  
         data => data[0].join("")
         },
-    {"name": "Letter", "symbols": [/[a-z]/], "postprocess": id},
+    {"name": "Letter$subexpression$1", "symbols": ["LowercaseLetter"]},
+    {"name": "Letter$subexpression$1", "symbols": ["UppercaseLetter"]},
+    {"name": "Letter", "symbols": ["Letter$subexpression$1"]},
+    {"name": "LowercaseLetter", "symbols": [/[a-z]/], "postprocess": id},
+    {"name": "UppercaseLetter", "symbols": [/[A-Z]/], "postprocess": id},
     {"name": "Done$string$1", "symbols": [{"literal":"e"}, {"literal":"n"}, {"literal":"d"}], "postprocess": function joiner(d) {return d.join('');}},
     {"name": "Done$ebnf$1", "symbols": []},
     {"name": "Done$ebnf$1$subexpression$1", "symbols": ["Space"]},
