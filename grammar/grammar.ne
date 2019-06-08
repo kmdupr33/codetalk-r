@@ -10,7 +10,9 @@ Slide -> Indent "slide" Newline Markdown Indent EndSlide {%
 
 Markdown -> Blocks:+
 Blocks -> Block EmptyBlock:* {%
-  data => data.filter(item => item[0]) // If there are no empty blocks, we don't want them showing up in the parse results
+  // If there are no empty blocks, we don't want them 
+  // showing up in the parse results
+  data => data.filter(item => item[0]) 
 %}
 EmptyBlock -> Indent:? Indent:? Newline {% nth(2) %}
 EndSlide -> "end" Newline:+ {% id %}
@@ -40,7 +42,7 @@ Title -> "# " Words {% hash %}
 Subtitle -> "## " Words {% hash %}
 
 # Image
-Image -> "[" Words:? "]" "(" Url ")" {%
+Image -> "![" Words:? "]" "(" Url ")" {%
   data => [data[1]].concat(data[4])
 %}
 

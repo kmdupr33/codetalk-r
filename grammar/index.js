@@ -47,7 +47,9 @@ var grammar = {
     {"name": "Blocks$ebnf$1", "symbols": []},
     {"name": "Blocks$ebnf$1", "symbols": ["Blocks$ebnf$1", "EmptyBlock"], "postprocess": function arrpush(d) {return d[0].concat([d[1]]);}},
     {"name": "Blocks", "symbols": ["Block", "Blocks$ebnf$1"], "postprocess": 
-        data => data.filter(item => item[0]) // If there are no empty blocks, we don't want them showing up in the parse results
+        // If there are no empty blocks, we don't want them 
+        // showing up in the parse results
+        data => data.filter(item => item[0]) 
         },
     {"name": "EmptyBlock$ebnf$1", "symbols": ["Indent"], "postprocess": id},
     {"name": "EmptyBlock$ebnf$1", "symbols": [], "postprocess": function(d) {return null;}},
@@ -99,9 +101,10 @@ var grammar = {
     {"name": "Title", "symbols": ["Title$string$1", "Words"], "postprocess": hash},
     {"name": "Subtitle$string$1", "symbols": [{"literal":"#"}, {"literal":"#"}, {"literal":" "}], "postprocess": function joiner(d) {return d.join('');}},
     {"name": "Subtitle", "symbols": ["Subtitle$string$1", "Words"], "postprocess": hash},
+    {"name": "Image$string$1", "symbols": [{"literal":"!"}, {"literal":"["}], "postprocess": function joiner(d) {return d.join('');}},
     {"name": "Image$ebnf$1", "symbols": ["Words"], "postprocess": id},
     {"name": "Image$ebnf$1", "symbols": [], "postprocess": function(d) {return null;}},
-    {"name": "Image", "symbols": [{"literal":"["}, "Image$ebnf$1", {"literal":"]"}, {"literal":"("}, "Url", {"literal":")"}], "postprocess": 
+    {"name": "Image", "symbols": ["Image$string$1", "Image$ebnf$1", {"literal":"]"}, {"literal":"("}, "Url", {"literal":")"}], "postprocess": 
         data => [data[1]].concat(data[4])
         },
     {"name": "Url$ebnf$1", "symbols": ["AnythingButCloseParentheses"]},
