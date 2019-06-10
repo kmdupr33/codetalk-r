@@ -46,4 +46,8 @@ describe("codetalk", () => {
     const input = readFile('meta_codeblock.codetalk');
     expectToParse(parser, input);
   });
+  test("inline.codetalk parses correctly", () => {
+    const input = readFile("inline.codetalk");
+    expectToParse(parser, input);
+  });
 });

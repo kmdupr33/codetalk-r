@@ -153,6 +153,73 @@ Array [
 ]
 `;
 
+exports[`codetalk inline.codetalk parses correctly 1`] = `
+Array [
+  Array [
+    "codetalk",
+    Array [
+      "slide",
+      Array [
+        Array [
+          " hello",
+        ],
+        Array [
+          Array [
+            "*",
+            "hello",
+          ],
+        ],
+        Array [
+          Array [
+            Array [
+              "*",
+              "lead",
+            ],
+            "with",
+            "this",
+          ],
+        ],
+        Array [
+          Array [
+            "in",
+            Array [
+              "*",
+              "the",
+            ],
+            "middle",
+          ],
+        ],
+        Array [
+          Array [
+            "what",
+            Array [
+              "*",
+              "about",
+            ],
+            "this",
+            Array [
+              "*",
+              "shit",
+            ],
+            "and",
+          ],
+        ],
+        Array [
+          Array [
+            "and this other",
+            Array [
+              "*",
+              "shit",
+            ],
+          ],
+        ],
+      ],
+      "end",
+    ],
+  ],
+]
+`;
+
 exports[`codetalk meta_codeblock.codetalk parses correctly 1`] = `
 Array [
   Array [

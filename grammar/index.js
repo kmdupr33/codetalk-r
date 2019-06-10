@@ -68,6 +68,12 @@ var grammar = {
     {"name": "Block", "symbols": ["Indent", "Indent", "Block$subexpression$1", "Newline"], "postprocess":  
         data => data[2][0]
         },
+    {"name": "Span$ebnf$1", "symbols": ["Unspanned"]},
+    {"name": "Span$ebnf$1", "symbols": ["Span$ebnf$1", "Unspanned"], "postprocess": function arrpush(d) {return d[0].concat([d[1]]);}},
+    {"name": "Span", "symbols": [{"literal":"*"}, "Span$ebnf$1", {"literal":"*"}], "postprocess":  data => 
+        [data[0]].concat([data[1].join("")])
+        },
+    {"name": "Unspanned", "symbols": [/[a-zA-Z ]/]},
     {"name": "CodeBlock$ebnf$1", "symbols": ["TrailingWord"], "postprocess": id},
     {"name": "CodeBlock$ebnf$1", "symbols": [], "postprocess": function(d) {return null;}},
     {"name": "CodeBlock", "symbols": ["CodeFence", "CodeBlock$ebnf$1", "Newline", "Indent", "Indent", "Code", "CodeFence"], "postprocess": 
@@ -84,12 +90,26 @@ var grammar = {
     {"name": "Words$ebnf$1", "symbols": []},
     {"name": "Words$ebnf$1", "symbols": ["Words$ebnf$1", "Word"], "postprocess": function arrpush(d) {return d[0].concat([d[1]]);}},
     {"name": "Words", "symbols": ["Words$ebnf$1", "TrailingWord"], "postprocess": 
-        data => `${data[0].join(' ')} ${data[1]}`
+        data => {    
+          // TODO There's still another weird case we need to handle
+          // that results in lines like this: [ [ [ '*', 'lead' ], 'with', 'this' ] ]
+          // which should be this instead: [ [ [ '*', 'lead' ], 'with this' ] ]    
+          const firstNonEmptyMatch = data.find(match => match.length > 0);    
+          if (Array.isArray(firstNonEmptyMatch) && firstNonEmptyMatch.some(match => match.includes('*'))) {      
+            return data[0].concat(data[1]);
+          }
+          if (Array.isArray(data[1]) && data[1].includes('*')) {
+            return [data[0].join(" ")].concat([data[1]]);
+          }
+          return `${data[0].join(" ")} ${data[1]}`    
+        }
         },
+    {"name": "TrailingWord$subexpression$1", "symbols": ["Characters"]},
+    {"name": "TrailingWord$subexpression$1", "symbols": ["Span"]},
     {"name": "TrailingWord$ebnf$1", "symbols": []},
     {"name": "TrailingWord$ebnf$1", "symbols": ["TrailingWord$ebnf$1", "Space"], "postprocess": function arrpush(d) {return d[0].concat([d[1]]);}},
-    {"name": "TrailingWord", "symbols": ["Characters", "TrailingWord$ebnf$1"], "postprocess":  
-        nth(0)
+    {"name": "TrailingWord", "symbols": ["TrailingWord$subexpression$1", "TrailingWord$ebnf$1"], "postprocess":  
+        data => data[0][0]
         },
     {"name": "Characters$ebnf$1$subexpression$1", "symbols": ["Letter"]},
     {"name": "Characters$ebnf$1$subexpression$1", "symbols": ["Punctuation"]},
@@ -122,8 +142,10 @@ var grammar = {
     {"name": "Done$ebnf$1$subexpression$1", "symbols": ["Newline"]},
     {"name": "Done$ebnf$1", "symbols": ["Done$ebnf$1", "Done$ebnf$1$subexpression$1"], "postprocess": function arrpush(d) {return d[0].concat([d[1]]);}},
     {"name": "Done", "symbols": ["Done$string$1", "Done$ebnf$1"]},
-    {"name": "Word", "symbols": ["Characters", "Space"], "postprocess":  
-        nth(0)
+    {"name": "Word$subexpression$1", "symbols": ["Characters"]},
+    {"name": "Word$subexpression$1", "symbols": ["Span"]},
+    {"name": "Word", "symbols": ["Word$subexpression$1", "Space"], "postprocess":  
+        data => data[0][0]
         },
     {"name": "Letter$subexpression$1", "symbols": ["LowercaseLetter"]},
     {"name": "Letter$subexpression$1", "symbols": ["UppercaseLetter"]},

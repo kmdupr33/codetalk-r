@@ -21,6 +21,11 @@ Block -> Indent Indent (Words | Title | Subtitle | CodeBlock | Image) Newline {%
   data => data[2][0]
 %}
 
+Span -> "*" Unspanned:+ "*" {% data => 
+  [data[0]].concat([data[1].join("")])
+%}
+Unspanned -> [a-zA-Z ]
+
 CodeBlock -> CodeFence TrailingWord:? Newline Indent Indent Code CodeFence {%
   data => data[0].concat(data[1]).concat(data[5])
 %}
@@ -32,10 +37,22 @@ Code -> AnythingButBackTick:+ {%
 AnythingButBackTick -> [^`]
 
 Words -> Word:* TrailingWord {%
-  data => `${data[0].join(' ')} ${data[1]}`
+  data => {    
+    // TODO There's still another weird case we need to handle
+    // that results in lines like this: [ [ [ '*', 'lead' ], 'with', 'this' ] ]
+    // which should be this instead: [ [ [ '*', 'lead' ], 'with this' ] ]    
+    const firstNonEmptyMatch = data.find(match => match.length > 0);    
+    if (Array.isArray(firstNonEmptyMatch) && firstNonEmptyMatch.some(match => match.includes('*'))) {      
+      return data[0].concat(data[1]);
+    }
+    if (Array.isArray(data[1]) && data[1].includes('*')) {
+      return [data[0].join(" ")].concat([data[1]]);
+    }
+    return `${data[0].join(" ")} ${data[1]}`    
+  }
 %}
-TrailingWord -> Characters Space:* {% 
-  nth(0)
+TrailingWord -> (Characters | Span) Space:* {% 
+  data => data[0][0]
 %}
 Characters -> (Letter | Punctuation):+ {%
   data => data[0].join("")
@@ -57,8 +74,8 @@ AnythingButCloseParentheses -> [^)]
 Done -> "end" (Space | Newline):*
 
 # Basic build blocks for Words
-Word -> Characters Space {% 
-  nth(0)
+Word -> (Characters | Span) Space {% 
+  data => data[0][0]
 %}
 Letter -> (LowercaseLetter | UppercaseLetter)
 Punctuation -> [\.,':]
