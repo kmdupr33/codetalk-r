@@ -8,6 +8,10 @@
     "test": "jest --watch"
   },
   "author": "",
+  "main": "./index.js",
+  "bin": {
+    "codetalkc": "codetalkc.js"
+  },
   "license": "ISC",
   "dependencies": {},
   "devDependencies": {
