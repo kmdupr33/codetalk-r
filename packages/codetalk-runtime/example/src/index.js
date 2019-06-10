@@ -1,7 +1,5 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
+import ExampleComponent from 'codetalk-runtime';
 
-import './index.css'
-import App from './App'
-
-ReactDOM.render(<App />, document.getElementById('root'))
+ReactDOM.render(<ExampleComponent text="Hello"/>, document.getElementById('root'))
