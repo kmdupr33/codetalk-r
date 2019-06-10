@@ -1,19 +1,7 @@
 {
-  "name": "codetalk-r",
-  "version": "1.0.0",
-  "description": "",
-  "scripts": {
-    "dev": "chokidar grammar/grammar.ne -c \"nearleyc grammar/grammar.ne -o grammar/index.js\"",
-    "test": "jest --watch"
-  },
-  "author": "",
-  "license": "ISC",
-  "dependencies": {
-    "nearley": "^2.16.0"
-  },
+  "name": "root",
+  "private": true,
   "devDependencies": {
-    "chokidar-cli": "^1.2.2",
-    "jest": "^24.8.0",
-    "watch": "^1.0.2"
+    "lerna": "^3.14.1"
   }
 }
