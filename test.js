@@ -50,4 +50,12 @@ describe("codetalk", () => {
     const input = readFile("inline.codetalk");
     expectToParse(parser, input);
   });
+  test("lists.codetalk parses correctly", () => {
+    const input = readFile("lists.codetalk");
+    expectToParse(parser, input);
+  })
+  test('hello_world_lists.codetalk parses correctly', () => {
+    const input = readFile("hello_world_lists.codetalk");
+    expectToParse(parser, input);
+  })
 });

@@ -1,0 +1,14 @@
+codetalk
+  slide
+    1. one
+    1. two
+    1. three
+  end
+  slide
+    * some
+    * of
+    * my
+    * favorite
+    * things
+  end
+end

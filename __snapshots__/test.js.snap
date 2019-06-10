@@ -124,6 +124,130 @@ Array [
 ]
 `;
 
+exports[`codetalk hello_world_lists.codetalk parses correctly 1`] = `
+Array [
+  Array [
+    "codetalk",
+    Array [
+      "slide",
+      Array [
+        Array [
+          Array [
+            Array [
+              Array [
+                "1.",
+              ],
+              Array [
+                " ",
+              ],
+              " one",
+            ],
+          ],
+        ],
+        Array [
+          Array [
+            Array [
+              Array [
+                "1.",
+              ],
+              Array [
+                " ",
+              ],
+              " two",
+            ],
+          ],
+        ],
+        Array [
+          Array [
+            Array [
+              Array [
+                "1.",
+              ],
+              Array [
+                " ",
+              ],
+              " three",
+            ],
+          ],
+        ],
+      ],
+      "end",
+    ],
+    Array [
+      "slide",
+      Array [
+        Array [
+          Array [
+            Array [
+              Array [
+                "*",
+              ],
+              Array [
+                " ",
+              ],
+              " some",
+            ],
+          ],
+        ],
+        Array [
+          Array [
+            Array [
+              Array [
+                "*",
+              ],
+              Array [
+                " ",
+              ],
+              " of",
+            ],
+          ],
+        ],
+        Array [
+          Array [
+            Array [
+              Array [
+                "*",
+              ],
+              Array [
+                " ",
+              ],
+              " my",
+            ],
+          ],
+        ],
+        Array [
+          Array [
+            Array [
+              Array [
+                "*",
+              ],
+              Array [
+                " ",
+              ],
+              " favorite",
+            ],
+          ],
+        ],
+        Array [
+          Array [
+            Array [
+              Array [
+                "*",
+              ],
+              Array [
+                " ",
+              ],
+              " things",
+            ],
+          ],
+        ],
+      ],
+      "end",
+    ],
+  ],
+]
+`;
+
 exports[`codetalk images.codetalk parses correctly 1`] = `
 Array [
   Array [
@@ -210,6 +334,214 @@ Array [
             Array [
               "*",
               "shit",
+            ],
+          ],
+        ],
+      ],
+      "end",
+    ],
+  ],
+]
+`;
+
+exports[`codetalk lists.codetalk parses correctly 1`] = `
+Array [
+  Array [
+    "codetalk",
+    Array [
+      "slide",
+      Array [
+        Array [
+          "lorem ipsum, son",
+        ],
+        Array [
+          Array [
+            Array [
+              Array [
+                "1.",
+              ],
+              Array [
+                " ",
+              ],
+              "hello world",
+            ],
+          ],
+        ],
+        Array [
+          Array [
+            Array [
+              Array [
+                "1.",
+              ],
+              Array [
+                " ",
+              ],
+              "goodbye world",
+            ],
+          ],
+        ],
+        Array [
+          " hello",
+        ],
+        Array [
+          Array [
+            Array [
+              Array [
+                "1.",
+              ],
+              Array [
+                " ",
+              ],
+              " what",
+            ],
+          ],
+        ],
+        Array [
+          Array [
+            Array [
+              Array [
+                "1.",
+              ],
+              Array [
+                " ",
+              ],
+              "the fuck",
+            ],
+          ],
+          Array [
+            Array [
+              "
+",
+            ],
+          ],
+        ],
+        Array [
+          " hello",
+          Array [
+            Array [
+              "
+",
+            ],
+          ],
+        ],
+        Array [
+          " goodbye",
+          Array [
+            Array [
+              "
+",
+            ],
+          ],
+        ],
+        Array [
+          Array [
+            Array [
+              Array [
+                "1.",
+              ],
+              Array [
+                " ",
+              ],
+              " ok",
+            ],
+          ],
+          Array [
+            Array [
+              "
+",
+            ],
+          ],
+        ],
+        Array [
+          Array [
+            Array [
+              Array [
+                "1.",
+              ],
+              Array [
+                " ",
+              ],
+              " end",
+            ],
+          ],
+        ],
+        Array [
+          Array [
+            Array [
+              Array [
+                "1.",
+              ],
+              Array [
+                " ",
+              ],
+              " two",
+            ],
+          ],
+        ],
+        Array [
+          Array [
+            Array [
+              Array [
+                "1.",
+              ],
+              Array [
+                " ",
+              ],
+              " three",
+            ],
+          ],
+          Array [
+            Array [
+              "
+",
+            ],
+          ],
+        ],
+        Array [
+          "oh shit",
+          Array [
+            Array [
+              "
+",
+            ],
+          ],
+        ],
+        Array [
+          Array [
+            Array [
+              Array [
+                "*",
+              ],
+              Array [
+                " ",
+              ],
+              " no",
+            ],
+          ],
+        ],
+        Array [
+          Array [
+            Array [
+              Array [
+                "*",
+              ],
+              Array [
+                " ",
+              ],
+              "its time",
+            ],
+          ],
+        ],
+        Array [
+          Array [
+            Array [
+              Array [
+                "*",
+              ],
+              Array [
+                " ",
+              ],
+              "to mix list types",
             ],
           ],
         ],

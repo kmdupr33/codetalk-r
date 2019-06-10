@@ -17,14 +17,17 @@ Blocks -> Block EmptyBlock:* {%
 EmptyBlock -> Indent:? Indent:? Newline {% nth(2) %}
 EndSlide -> "end" Newline:+ {% id %}
 
-Block -> Indent Indent (Words | Title | Subtitle | CodeBlock | Image) Newline {% 
+Block -> Indent Indent (Words | Heading | CodeBlock | Image | List) Newline {% 
   data => data[2][0]
 %}
 
-Span -> "*" Unspanned:+ "*" {% data => 
-  [data[0]].concat([data[1].join("")])
+Heading -> (Title | Subtitle) {% 
+  data => data[0][0] 
 %}
-Unspanned -> [a-zA-Z ]
+
+List -> (OrderedList | UnorderedList) {%
+  data => data[0][0]
+%}
 
 CodeBlock -> CodeFence TrailingWord:? Newline Indent Indent Code CodeFence {%
   data => data[0].concat(data[1]).concat(data[5])
@@ -54,11 +57,23 @@ Words -> Word:* TrailingWord {%
 TrailingWord -> (Characters | Span) Space:* {% 
   data => data[0][0]
 %}
+Span -> "*" Unspanned:+ "*" {% data => 
+  [data[0]].concat([data[1].join("")])
+%}
+Unspanned -> [a-zA-Z ]
 Characters -> (Letter | Punctuation):+ {%
   data => data[0].join("")
 %}
 Title -> "# " Words {% hash %}
 Subtitle -> "## " Words {% hash %}
+
+# TODO Gross. Return w/ a lexer and do this right
+PreIndentedTrailingListItem[X] -> $X Space Words
+ListItem[X] -> Indent Indent $X Space Words Newline
+TrailingListItem[X] -> Indent Indent $X Space Words
+
+OrderedList -> (ListItem["1."]:* TrailingListItem["1."]) | PreIndentedTrailingListItem["1."]
+UnorderedList -> (ListItem["*"]:* TrailingListItem["*"]) | PreIndentedTrailingListItem["*"]
 
 # Image
 Image -> "![" Words:? "]" "(" Url ")" {%
