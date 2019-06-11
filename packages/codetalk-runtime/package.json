@@ -1,7 +1,7 @@
 {
-  "name": "codetalk-runtimes",
+  "name": "codetalk-runtime",
   "version": "1.0.0",
-  "description": "codetalk-runtimes React component",
+  "description": "codetalk-runtime React component",
   "main": "lib/index.js",
   "module": "es/index.js",
   "files": [
