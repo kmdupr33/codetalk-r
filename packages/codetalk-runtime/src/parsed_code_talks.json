@@ -1,0 +1,182 @@
+[
+  [
+    [
+      "codetalk",
+      [
+        "slide",
+        [
+          [["#", "Hello world"]],
+          [["##", " goodbye"]],
+          ["idk why you say goodbye"]
+        ],
+        "end"
+      ],
+      ["slide", [["goodbye world"]], "end"]
+    ]
+  ],
+  [
+    [
+      "codetalk",
+      [
+        "slide",
+        [
+          ["Here is some code:", [["\n"]]],
+          [
+            [
+              "```",
+              "javascript",
+              "import React from 'react';\n    const HelloWorld = ({name}) => {\n      return <p>Hello, {name}</p>\n    };\n    "
+            ]
+          ]
+        ],
+        "end"
+      ]
+    ]
+  ],
+  [
+    [
+      "codetalk",
+      [
+        "slide",
+        [
+          [["#", "hello world"]],
+          [["##", "this is code talk"], [["\n"]]],
+          ["idk why you say goodbye"]
+        ],
+        "end"
+      ]
+    ]
+  ],
+  [["codetalk", ["slide", [["hello, world"]], "end"]]],
+  [
+    [
+      "codetalk",
+      [
+        "slide",
+        [
+          [[[["1."], [" "], " one"]]],
+          [[[["1."], [" "], " two"]]],
+          [[[["1."], [" "], " three"]]]
+        ],
+        "end"
+      ],
+      [
+        "slide",
+        [
+          [[[["*"], [" "], " some"]]],
+          [[[["*"], [" "], " of"]]],
+          [[[["*"], [" "], " my"]]],
+          [[[["*"], [" "], " favorite"]]],
+          [[[["*"], [" "], " things"]]]
+        ],
+        "end"
+      ]
+    ]
+  ],
+  [
+    [
+      "codetalk",
+      [
+        "slide",
+        [
+          [
+            "Trash makes me sad. Doesn't it make you sad. Here. Check:",
+            [["\n"]]
+          ],
+          [
+            [
+              "Codetalk logo",
+              "https://www.philosophicalhacker.com/images/trash.jpg"
+            ]
+          ]
+        ],
+        "end"
+      ]
+    ]
+  ],
+  [
+    [
+      "codetalk",
+      [
+        "slide",
+        [
+          [" hello"],
+          [["*", "hello"]],
+          [[["*", "lead"], "with", "this"]],
+          [["in", ["*", "the"], "middle"]],
+          [["what", ["*", "about"], "this", ["*", "shit"], "and"]],
+          [["and this other", ["*", "shit"]]]
+        ],
+        "end"
+      ]
+    ]
+  ],
+  [
+    [
+      "codetalk",
+      [
+        "slide",
+        [
+          ["lorem ipsum, son"],
+          [[[["1."], [" "], "hello world"]]],
+          [[[["1."], [" "], "goodbye world"]]],
+          [" hello"],
+          [[[["1."], [" "], " what"]]],
+          [[[["1."], [" "], "the fuck"]], [["\n"]]],
+          [" hello", [["\n"]]],
+          [" goodbye", [["\n"]]],
+          [[[["1."], [" "], " ok"]], [["\n"]]],
+          [[[["1."], [" "], " end"]]],
+          [[[["1."], [" "], " two"]]],
+          [[[["1."], [" "], " three"]], [["\n"]]],
+          ["oh shit", [["\n"]]],
+          [[[["*"], [" "], " no"]]],
+          [[[["*"], [" "], "its time"]]],
+          [[[["*"], [" "], "to mix list types"]]]
+        ],
+        "end"
+      ]
+    ]
+  ],
+  [
+    [
+      "codetalk",
+      [
+        "slide",
+        [
+          ["Here is some code:", [["\n"]]],
+          [
+            [
+              "```",
+              "codetalk",
+              "codetalk\n      slide\n        hello world\n      end\n    end\n    "
+            ]
+          ]
+        ],
+        "end"
+      ]
+    ]
+  ],
+  [
+    [
+      "codetalk",
+      [
+        "slide",
+        [
+          [
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam eu euismod dolor. In elementum ligula semper, cursus justo vitae, molestie ante. Vestibulum ac felis at eros sollicitudin faucibus et eget purus. Sed dolor turpis, rhoncus sed ullamcorper ut, egestas sit amet massa. Praesent et facilisis nibh. Etiam quis magna libero. Ut eget mattis turpis. Nullam elementum et eros nec elementum.",
+            [["\n"]]
+          ],
+          [
+            "Duis ex leo, finibus eget vulputate ac, commodo egestas magna. Ut tincidunt nisl et euismod aliquet. Nulla eget quam sit amet diam tincidunt gravida. Sed vel nisl ligula. Sed semper vitae dui sed maximus. Cras euismod libero leo, ac ultricies metus hendrerit vel. Nunc hendrerit sed lacus a pellentesque. Morbi pulvinar tortor purus, vitae ornare turpis tristique vel. Donec eget tortor nibh.",
+            [["\n"]]
+          ],
+          [
+            "Ut tempor, ligula id mattis scelerisque, ipsum dolor ultrices ipsum, vel auctor tellus neque ut lorem. Donec felis turpis, iaculis eget orci at, commodo volutpat ante. Nullam interdum nisi vitae convallis volutpat. Morbi at mi egestas, congue nunc eu, tincidunt mauris. Donec tincidunt risus consectetur nisl sollicitudin bibendum. Donec blandit purus vel massa facilisis euismod. Interdum et malesuada fames ac ante ipsum primis in faucibus. Suspendisse placerat mi nulla, quis eleifend sapien fringilla sit amet. Proin sed dignissim nisl. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Phasellus aliquam purus non vehicula posuere."
+          ]
+        ],
+        "end"
+      ]
+    ]
+  ]
+]

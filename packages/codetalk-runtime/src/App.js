@@ -1,26 +1,21 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import { render } from "react-dom";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+import CodetalkRuntime from "./lib";
+import parsedTalks from "./parsed_code_talks";
 
-export default App;
+const Demo = () => {
+  const [index, setIndex] = useState(-1);
+  if (index === -1) {
+    return (
+      <div>
+        {parsedTalks.map((talk, index) => (
+          <section style={{marginTop: 30, maxWidth: '70vw'}} onClick={() => setIndex(index)}>{JSON.stringify(talk, null, 2)}</section>
+        ))}        
+      </div>
+    );
+  }
+  return <CodetalkRuntime parsed={parsedTalks[index]} />;
+};
+
+export default Demo;
