@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-import { render } from "react-dom";
 
 import CodetalkRuntime from "./lib";
 import parsedTalks from "./parsed_code_talks";
+import JSONPretty from "react-json-pretty";
 
 const Demo = () => {
   const [index, setIndex] = useState(-1);
@@ -10,8 +10,17 @@ const Demo = () => {
     return (
       <div>
         {parsedTalks.map((talk, index) => (
-          <section style={{marginTop: 30, maxWidth: '70vw'}} onClick={() => setIndex(index)}>{JSON.stringify(talk, null, 2)}</section>
-        ))}        
+          <JSONPretty
+            key={index}
+            style={{
+              marginTop: 30,
+              maxWidth: "70vw",
+              backgroundColor: index % 2 === 0 ? "white" : "grey"
+            }}
+            onClick={() => setIndex(index)}
+            data={talk}
+          />
+        ))}
       </div>
     );
   }
