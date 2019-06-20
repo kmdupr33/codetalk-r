@@ -2,14 +2,11 @@ import React from "react";
 import Blocks from "./Blocks";
 
 const Slide = ({ input }) => {
-  /* 
-    we name the variables even though we don't use them so its
-    clearer where we are in the AST  
-  */
-  //eslint-disable-next-line no-unused-vars 
-  const [slidesKeyword, markdown, endSlideKeyword] = input;
+  const markdown = input
+    .slice(1) // slide keyword
+    .slice(0, -1); // end keyword
   console.log(`Slide: ${JSON.stringify(markdown)}`);
-  return markdown.map(line => <Blocks input={line}/>);  
+  return markdown.map(blocks => <Blocks input={blocks} />);
 };
 
 export default Slide;

@@ -1,10 +1,12 @@
 import React, { useState } from "react";
 import Slide from "./Slide";
 
-const CodetalkRuntime = ({ parsed }) => {
+const CodetalkRuntime = ({ codetalk }) => {
   const [currentSlide, setCurrentSlide] = useState(0);
   // [["codetalk",["slide",[["hello, world"]],"end"]]]
-  const slides = parsed[0].slice(1);
+
+  const slides = codetalk[0].slice(1);
+  console.log(`Slides: ${JSON.stringify(slides)}`);
   return (
     <div
       onClick={() => {

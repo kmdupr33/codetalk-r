@@ -24,7 +24,7 @@ const Demo = () => {
       </div>
     );
   }
-  return <CodetalkRuntime parsed={parsedTalks[index]} />;
+  return <CodetalkRuntime codetalk={parsedTalks[index]} />;
 };
 
 export default Demo;
