@@ -188,7 +188,7 @@ var grammar = {
     {"name": "Punctuation", "symbols": [/[\.,':]/]},
     {"name": "LowercaseLetter", "symbols": [/[a-z]/], "postprocess": id},
     {"name": "UppercaseLetter", "symbols": [/[A-Z]/], "postprocess": id},
-    {"name": "Newline", "symbols": [{"literal":"\n"}]},
+    {"name": "Newline", "symbols": [{"literal":"\n"}], "postprocess": id},
     {"name": "Indent$string$1", "symbols": [{"literal":" "}, {"literal":" "}], "postprocess": function joiner(d) {return d.join('');}},
     {"name": "Indent", "symbols": ["Indent$string$1"]},
     {"name": "Space", "symbols": [{"literal":" "}]}

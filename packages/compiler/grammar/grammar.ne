@@ -98,7 +98,7 @@ LowercaseLetter -> [a-z] {% id %}
 UppercaseLetter -> [A-Z] {% id %}
 
 # Whitespace
-Newline -> "\n"
+Newline -> "\n" {% id %}
 Indent -> "  "
 Space -> " "
 

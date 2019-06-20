@@ -5,7 +5,8 @@
   "scripts": {
     "dev": "chokidar grammar/grammar.ne -c \"npm run compile\"",
     "compile": "nearleyc grammar/grammar.ne -o grammar/index.js",
-    "test": "jest --watch"
+    "test": "jest --watch",
+    "create-parse-trees": "(echo [; ls code_talks/ | xargs -I % -L 1 sh -c 'node codetalkc.js code_talks/%; echo ,'; echo ]) > ../codetalk-runtime/src/parsed_code_talks.json"
   },
   "author": "",
   "main": "./index.js",

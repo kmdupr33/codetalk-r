@@ -1,10 +1,10 @@
 import React from "react";
-import Line from "./Line";
+import Blocks from "./Blocks";
 
 const Slide = ({ input }) => {
   const stripFences = input.slice(1).slice(0, -1);
   console.log(`Slide: ${JSON.stringify(stripFences)}`);
-  return stripFences[0].map(line => <Line input={line}/>);  
+  return stripFences[0].map(line => <Blocks input={line}/>);  
 };
 
 export default Slide;
