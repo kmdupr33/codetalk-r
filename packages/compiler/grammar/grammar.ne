@@ -1,7 +1,7 @@
 @builtin "postprocessors.ne"
 
 CodeTalk -> Newline:* "codetalk" Newline Slide:+ Done {% 
-  data => [data[1]].concat(data[3]).concat(data[4][1]) 
+  data => [data[1]].concat(data[3]) 
 %}
 
 Slide -> Indent "slide" Newline Markdown Indent EndSlide {% 
@@ -88,7 +88,7 @@ Url -> AnythingButCloseParentheses:+ {%
 
 AnythingButCloseParentheses -> [^)]
 
-Done -> "end" (Space | Newline):*
+Done -> "end" (Space | Newline):* {% id %}
 
 # Basic build blocks for Words
 Word -> (Characters | Span) Space {% 

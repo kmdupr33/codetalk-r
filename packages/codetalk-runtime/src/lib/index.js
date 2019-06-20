@@ -7,7 +7,10 @@ const CodetalkRuntime = ({ parsed }) => {
   const slides = parsed[0].slice(1);
   return (
     <div
-      onClick={() => setCurrentSlide(currentSlide + 1)}
+      onClick={() => {
+        const nextSlideIndex = currentSlide + 1;
+        if (nextSlideIndex < slides.length) setCurrentSlide(nextSlideIndex);
+      }}
       style={{
         height: "100vh",
         width: "100vw",

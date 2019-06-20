@@ -35,7 +35,7 @@ var grammar = {
     {"name": "CodeTalk$ebnf$2", "symbols": ["Slide"]},
     {"name": "CodeTalk$ebnf$2", "symbols": ["CodeTalk$ebnf$2", "Slide"], "postprocess": function arrpush(d) {return d[0].concat([d[1]]);}},
     {"name": "CodeTalk", "symbols": ["CodeTalk$ebnf$1", "CodeTalk$string$1", "Newline", "CodeTalk$ebnf$2", "Done"], "postprocess":  
-        data => [data[1]].concat(data[3]).concat(data[4][1]) 
+        data => [data[1]].concat(data[3]) 
         },
     {"name": "Slide$string$1", "symbols": [{"literal":"s"}, {"literal":"l"}, {"literal":"i"}, {"literal":"d"}, {"literal":"e"}], "postprocess": function joiner(d) {return d.join('');}},
     {"name": "Slide", "symbols": ["Indent", "Slide$string$1", "Newline", "Markdown", "Indent", "EndSlide"], "postprocess":  
@@ -178,7 +178,7 @@ var grammar = {
     {"name": "Done$ebnf$1$subexpression$1", "symbols": ["Space"]},
     {"name": "Done$ebnf$1$subexpression$1", "symbols": ["Newline"]},
     {"name": "Done$ebnf$1", "symbols": ["Done$ebnf$1", "Done$ebnf$1$subexpression$1"], "postprocess": function arrpush(d) {return d[0].concat([d[1]]);}},
-    {"name": "Done", "symbols": ["Done$string$1", "Done$ebnf$1"]},
+    {"name": "Done", "symbols": ["Done$string$1", "Done$ebnf$1"], "postprocess": id},
     {"name": "Word$subexpression$1", "symbols": ["Characters"]},
     {"name": "Word$subexpression$1", "symbols": ["Span"]},
     {"name": "Word", "symbols": ["Word$subexpression$1", "Space"], "postprocess":  
