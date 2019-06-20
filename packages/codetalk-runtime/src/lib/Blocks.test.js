@@ -14,10 +14,29 @@ describe("Blocks", () => {
     expect(tree).toMatchSnapshot();
   });
   it("handles simple text", () => {
-    const tree = renderer.create(<Blocks input={["idk why you say goodbye"]} />);
+    const tree = renderer.create(
+      <Blocks input={["idk why you say goodbye"]} />
+    );
     expect(tree).toMatchSnapshot();
-  })  
+  });
   it("handles a newline", () => {
-    
+    const tree = renderer.create(
+      <Blocks input={[["##", "this is code talk"], ["\n"]]} />
+    );
+    expect(tree).toMatchSnapshot();
+  });
+  it("handles codeblocks", () => {
+    const tree = renderer.create(
+      <Blocks
+        input={[
+          [
+            "```",
+            "javascript",
+            "import React from 'react';\nconst HelloWorld = ({name}) => {\n  return <p>Hello, {name}</p>\n};\n"
+          ]
+        ]}
+      />      
+    );
+    expect(tree).toMatchSnapshot();
   });
 });

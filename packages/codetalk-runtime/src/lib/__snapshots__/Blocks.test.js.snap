@@ -1,5 +1,14 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Blocks handles a newline 1`] = `
+Array [
+  <h2>
+    this is code talk
+  </h2>,
+  <br />,
+]
+`;
+
 exports[`Blocks handles a simple subtitle 1`] = `
 <h2>
   goodbye
@@ -10,6 +19,130 @@ exports[`Blocks handles a simple title 1`] = `
 <h1>
   Hello world
 </h1>
+`;
+
+exports[`Blocks handles codeblocks 1`] = `
+<pre
+  style={
+    Object {
+      "background": "#F0F0F0",
+      "color": "#444",
+      "display": "block",
+      "overflowX": "auto",
+      "padding": "0.5em",
+    }
+  }
+>
+  <code>
+    <span
+      style={
+        Object {
+          "fontWeight": "bold",
+        }
+      }
+    >
+      import
+    </span>
+     React 
+    <span
+      style={
+        Object {
+          "fontWeight": "bold",
+        }
+      }
+    >
+      from
+    </span>
+     
+    <span
+      style={
+        Object {
+          "color": "#880000",
+        }
+      }
+    >
+      'react'
+    </span>
+    ;
+
+    <span
+      style={
+        Object {
+          "fontWeight": "bold",
+        }
+      }
+    >
+      const
+    </span>
+     HelloWorld = 
+    <span
+      className="hljs-function"
+      style={Object {}}
+    >
+      (
+      <span
+        className="hljs-params"
+        style={Object {}}
+      >
+        {name}
+      </span>
+      ) =&gt;
+    </span>
+     {
+  
+    <span
+      style={
+        Object {
+          "fontWeight": "bold",
+        }
+      }
+    >
+      return
+    </span>
+     
+    <span
+      className="xml"
+      style={Object {}}
+    >
+      <span
+        className="hljs-tag"
+        style={Object {}}
+      >
+        &lt;
+        <span
+          style={
+            Object {
+              "fontWeight": "bold",
+            }
+          }
+        >
+          p
+        </span>
+        &gt;
+      </span>
+      Hello, {name}
+      <span
+        className="hljs-tag"
+        style={Object {}}
+      >
+        &lt;/
+        <span
+          style={
+            Object {
+              "fontWeight": "bold",
+            }
+          }
+        >
+          p
+        </span>
+        &gt;
+      </span>
+    </span>
+    
+};
+
+  </code>
+</pre>
 `;
 
 exports[`Blocks handles simple text 1`] = `
