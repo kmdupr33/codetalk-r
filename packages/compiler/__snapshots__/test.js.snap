@@ -57,10 +57,10 @@ Array [
             "\`\`\`",
             "javascript",
             "import React from 'react';
-    const HelloWorld = ({name}) => {
-      return <p>Hello, {name}</p>
-    };
-    ",
+const HelloWorld = ({name}) => {
+  return <p>Hello, {name}</p>
+};
+",
           ],
         ],
       ],
@@ -553,11 +553,11 @@ Array [
             "\`\`\`",
             "codetalk",
             "codetalk
-      slide
-        hello world
-      end
-    end
-    ",
+  slide
+    hello world
+  end
+end
+",
           ],
         ],
       ],

@@ -34,7 +34,9 @@ CodeBlock -> CodeFence TrailingWord:? Newline Indent Indent Code CodeFence {%
 %}
 CodeFence -> "```"
 Code -> AnythingButBackTick:+ {%
-  data => data[0].join("")
+  data => data[0]
+    .join("")
+    .replace(/\n    /g, '\n')
 %}
 # This won't work if the code includes a backtick; Need to revisit
 AnythingButBackTick -> [^`]

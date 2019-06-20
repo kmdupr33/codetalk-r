@@ -25,7 +25,7 @@
             [
               "```",
               "javascript",
-              "import React from 'react';\n    const HelloWorld = ({name}) => {\n      return <p>Hello, {name}</p>\n    };\n    "
+              "import React from 'react';\nconst HelloWorld = ({name}) => {\n  return <p>Hello, {name}</p>\n};\n"
             ]
           ]
         ],
@@ -146,7 +146,7 @@
             [
               "```",
               "codetalk",
-              "codetalk\n      slide\n        hello world\n      end\n    end\n    "
+              "codetalk\n  slide\n    hello world\n  end\nend\n"
             ]
           ]
         ],

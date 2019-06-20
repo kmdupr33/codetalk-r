@@ -88,7 +88,9 @@ var grammar = {
     {"name": "Code$ebnf$1", "symbols": ["AnythingButBackTick"]},
     {"name": "Code$ebnf$1", "symbols": ["Code$ebnf$1", "AnythingButBackTick"], "postprocess": function arrpush(d) {return d[0].concat([d[1]]);}},
     {"name": "Code", "symbols": ["Code$ebnf$1"], "postprocess": 
-        data => data[0].join("")
+        data => data[0]
+          .join("")
+          .replace(/\n    /g, '\n')
         },
     {"name": "AnythingButBackTick", "symbols": [/[^`]/]},
     {"name": "Words$ebnf$1", "symbols": []},
