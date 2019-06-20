@@ -43,7 +43,7 @@ var grammar = {
         },
     {"name": "Markdown$ebnf$1", "symbols": ["Blocks"]},
     {"name": "Markdown$ebnf$1", "symbols": ["Markdown$ebnf$1", "Blocks"], "postprocess": function arrpush(d) {return d[0].concat([d[1]]);}},
-    {"name": "Markdown", "symbols": ["Markdown$ebnf$1"]},
+    {"name": "Markdown", "symbols": ["Markdown$ebnf$1"], "postprocess": id},
     {"name": "Blocks$ebnf$1", "symbols": []},
     {"name": "Blocks$ebnf$1", "symbols": ["Blocks$ebnf$1", "EmptyBlock"], "postprocess": function arrpush(d) {return d[0].concat([d[1]]);}},
     {"name": "Blocks", "symbols": ["Block", "Blocks$ebnf$1"], "postprocess": 

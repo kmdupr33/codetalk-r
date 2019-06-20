@@ -8,29 +8,25 @@ Array [
       "slide",
       Array [
         Array [
-          Array [
-            "#",
-            "Hello world",
-          ],
+          "#",
+          "Hello world",
         ],
+      ],
+      Array [
         Array [
-          Array [
-            "##",
-            " goodbye",
-          ],
+          "##",
+          " goodbye",
         ],
-        Array [
-          "idk why you say goodbye",
-        ],
+      ],
+      Array [
+        "idk why you say goodbye",
       ],
       "end",
     ],
     Array [
       "slide",
       Array [
-        Array [
-          "goodbye world",
-        ],
+        "goodbye world",
       ],
       "end",
     ],
@@ -45,23 +41,21 @@ Array [
     Array [
       "slide",
       Array [
+        "Here is some code:",
         Array [
-          "Here is some code:",
-          Array [
-            "
+          "
 ",
-          ],
         ],
+      ],
+      Array [
         Array [
-          Array [
-            "\`\`\`",
-            "javascript",
-            "import React from 'react';
+          "\`\`\`",
+          "javascript",
+          "import React from 'react';
 const HelloWorld = ({name}) => {
   return <p>Hello, {name}</p>
 };
 ",
-          ],
         ],
       ],
       "end",
@@ -78,24 +72,22 @@ Array [
       "slide",
       Array [
         Array [
-          Array [
-            "#",
-            "hello world",
-          ],
+          "#",
+          "hello world",
+        ],
+      ],
+      Array [
+        Array [
+          "##",
+          "this is code talk",
         ],
         Array [
-          Array [
-            "##",
-            "this is code talk",
-          ],
-          Array [
-            "
+          "
 ",
-          ],
         ],
-        Array [
-          "idk why you say goodbye",
-        ],
+      ],
+      Array [
+        "idk why you say goodbye",
       ],
       "end",
     ],
@@ -110,9 +102,7 @@ Array [
     Array [
       "slide",
       Array [
-        Array [
-          "hello, world",
-        ],
+        "hello, world",
       ],
       "end",
     ],
@@ -130,40 +120,38 @@ Array [
         Array [
           Array [
             Array [
-              Array [
-                "1.",
-              ],
-              Array [
-                " ",
-              ],
-              " one",
+              "1.",
             ],
+            Array [
+              " ",
+            ],
+            " one",
           ],
         ],
+      ],
+      Array [
         Array [
           Array [
             Array [
-              Array [
-                "1.",
-              ],
-              Array [
-                " ",
-              ],
-              " two",
+              "1.",
             ],
+            Array [
+              " ",
+            ],
+            " two",
           ],
         ],
+      ],
+      Array [
         Array [
           Array [
             Array [
-              Array [
-                "1.",
-              ],
-              Array [
-                " ",
-              ],
-              " three",
+              "1.",
             ],
+            Array [
+              " ",
+            ],
+            " three",
           ],
         ],
       ],
@@ -175,66 +163,64 @@ Array [
         Array [
           Array [
             Array [
-              Array [
-                "*",
-              ],
-              Array [
-                " ",
-              ],
-              " some",
+              "*",
             ],
+            Array [
+              " ",
+            ],
+            " some",
           ],
         ],
+      ],
+      Array [
         Array [
           Array [
             Array [
-              Array [
-                "*",
-              ],
-              Array [
-                " ",
-              ],
-              " of",
+              "*",
             ],
+            Array [
+              " ",
+            ],
+            " of",
           ],
         ],
+      ],
+      Array [
         Array [
           Array [
             Array [
-              Array [
-                "*",
-              ],
-              Array [
-                " ",
-              ],
-              " my",
+              "*",
             ],
+            Array [
+              " ",
+            ],
+            " my",
           ],
         ],
+      ],
+      Array [
         Array [
           Array [
             Array [
-              Array [
-                "*",
-              ],
-              Array [
-                " ",
-              ],
-              " favorite",
+              "*",
             ],
+            Array [
+              " ",
+            ],
+            " favorite",
           ],
         ],
+      ],
+      Array [
         Array [
           Array [
             Array [
-              Array [
-                "*",
-              ],
-              Array [
-                " ",
-              ],
-              " things",
+              "*",
             ],
+            Array [
+              " ",
+            ],
+            " things",
           ],
         ],
       ],
@@ -251,18 +237,16 @@ Array [
     Array [
       "slide",
       Array [
+        "Trash makes me sad. Doesn't it make you sad. Here. Check:",
         Array [
-          "Trash makes me sad. Doesn't it make you sad. Here. Check:",
-          Array [
-            "
+          "
 ",
-          ],
         ],
+      ],
+      Array [
         Array [
-          Array [
-            "Codetalk logo",
-            "https://www.philosophicalhacker.com/images/trash.jpg",
-          ],
+          "Codetalk logo",
+          "https://www.philosophicalhacker.com/images/trash.jpg",
         ],
       ],
       "end",
@@ -278,57 +262,55 @@ Array [
     Array [
       "slide",
       Array [
+        " hello",
+      ],
+      Array [
         Array [
-          " hello",
+          "*",
+          "hello",
         ],
+      ],
+      Array [
         Array [
           Array [
             "*",
-            "hello",
+            "lead",
           ],
+          "with",
+          "this",
         ],
+      ],
+      Array [
         Array [
+          "in",
           Array [
-            Array [
-              "*",
-              "lead",
-            ],
-            "with",
-            "this",
+            "*",
+            "the",
           ],
+          "middle",
         ],
+      ],
+      Array [
         Array [
+          "what",
           Array [
-            "in",
-            Array [
-              "*",
-              "the",
-            ],
-            "middle",
+            "*",
+            "about",
           ],
-        ],
-        Array [
+          "this",
           Array [
-            "what",
-            Array [
-              "*",
-              "about",
-            ],
-            "this",
-            Array [
-              "*",
-              "shit",
-            ],
-            "and",
+            "*",
+            "shit",
           ],
+          "and",
         ],
+      ],
+      Array [
         Array [
+          "and this other",
           Array [
-            "and this other",
-            Array [
-              "*",
-              "shit",
-            ],
+            "*",
+            "shit",
           ],
         ],
       ],
@@ -345,186 +327,184 @@ Array [
     Array [
       "slide",
       Array [
-        Array [
-          "lorem ipsum, son",
-        ],
-        Array [
-          Array [
-            Array [
-              Array [
-                "1.",
-              ],
-              Array [
-                " ",
-              ],
-              "hello world",
-            ],
-          ],
-        ],
+        "lorem ipsum, son",
+      ],
+      Array [
         Array [
           Array [
             Array [
-              Array [
-                "1.",
-              ],
-              Array [
-                " ",
-              ],
-              "goodbye world",
+              "1.",
             ],
+            Array [
+              " ",
+            ],
+            "hello world",
           ],
         ],
-        Array [
-          " hello",
-        ],
+      ],
+      Array [
         Array [
           Array [
             Array [
-              Array [
-                "1.",
-              ],
-              Array [
-                " ",
-              ],
-              " what",
+              "1.",
             ],
+            Array [
+              " ",
+            ],
+            "goodbye world",
           ],
         ],
+      ],
+      Array [
+        " hello",
+      ],
+      Array [
         Array [
           Array [
             Array [
-              Array [
-                "1.",
-              ],
-              Array [
-                " ",
-              ],
-              "the fuck",
+              "1.",
             ],
+            Array [
+              " ",
+            ],
+            " what",
           ],
+        ],
+      ],
+      Array [
+        Array [
           Array [
-            "
+            Array [
+              "1.",
+            ],
+            Array [
+              " ",
+            ],
+            "the fuck",
+          ],
+        ],
+        Array [
+          "
 ",
-          ],
         ],
+      ],
+      Array [
+        " hello",
         Array [
-          " hello",
-          Array [
-            "
+          "
 ",
-          ],
         ],
+      ],
+      Array [
+        " goodbye",
         Array [
-          " goodbye",
-          Array [
-            "
+          "
 ",
-          ],
         ],
+      ],
+      Array [
         Array [
           Array [
             Array [
-              Array [
-                "1.",
-              ],
-              Array [
-                " ",
-              ],
-              " ok",
+              "1.",
             ],
+            Array [
+              " ",
+            ],
+            " ok",
           ],
-          Array [
-            "
+        ],
+        Array [
+          "
 ",
-          ],
         ],
+      ],
+      Array [
         Array [
           Array [
             Array [
-              Array [
-                "1.",
-              ],
-              Array [
-                " ",
-              ],
-              " end",
+              "1.",
             ],
+            Array [
+              " ",
+            ],
+            " end",
           ],
         ],
+      ],
+      Array [
         Array [
           Array [
             Array [
-              Array [
-                "1.",
-              ],
-              Array [
-                " ",
-              ],
-              " two",
+              "1.",
             ],
+            Array [
+              " ",
+            ],
+            " two",
           ],
         ],
+      ],
+      Array [
         Array [
           Array [
             Array [
-              Array [
-                "1.",
-              ],
-              Array [
-                " ",
-              ],
-              " three",
+              "1.",
             ],
+            Array [
+              " ",
+            ],
+            " three",
           ],
-          Array [
-            "
+        ],
+        Array [
+          "
 ",
-          ],
         ],
+      ],
+      Array [
+        "oh shit",
         Array [
-          "oh shit",
-          Array [
-            "
+          "
 ",
-          ],
         ],
+      ],
+      Array [
         Array [
           Array [
             Array [
-              Array [
-                "*",
-              ],
-              Array [
-                " ",
-              ],
-              " no",
+              "*",
             ],
+            Array [
+              " ",
+            ],
+            " no",
           ],
         ],
+      ],
+      Array [
         Array [
           Array [
             Array [
-              Array [
-                "*",
-              ],
-              Array [
-                " ",
-              ],
-              "its time",
+              "*",
             ],
+            Array [
+              " ",
+            ],
+            "its time",
           ],
         ],
+      ],
+      Array [
         Array [
           Array [
             Array [
-              Array [
-                "*",
-              ],
-              Array [
-                " ",
-              ],
-              "to mix list types",
+              "*",
             ],
+            Array [
+              " ",
+            ],
+            "to mix list types",
           ],
         ],
       ],
@@ -541,24 +521,22 @@ Array [
     Array [
       "slide",
       Array [
+        "Here is some code:",
         Array [
-          "Here is some code:",
-          Array [
-            "
+          "
 ",
-          ],
         ],
+      ],
+      Array [
         Array [
-          Array [
-            "\`\`\`",
-            "codetalk",
-            "codetalk
+          "\`\`\`",
+          "codetalk",
+          "codetalk
   slide
     hello world
   end
 end
 ",
-          ],
         ],
       ],
       "end",
@@ -574,23 +552,21 @@ Array [
     Array [
       "slide",
       Array [
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam eu euismod dolor. In elementum ligula semper, cursus justo vitae, molestie ante. Vestibulum ac felis at eros sollicitudin faucibus et eget purus. Sed dolor turpis, rhoncus sed ullamcorper ut, egestas sit amet massa. Praesent et facilisis nibh. Etiam quis magna libero. Ut eget mattis turpis. Nullam elementum et eros nec elementum.",
         Array [
-          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam eu euismod dolor. In elementum ligula semper, cursus justo vitae, molestie ante. Vestibulum ac felis at eros sollicitudin faucibus et eget purus. Sed dolor turpis, rhoncus sed ullamcorper ut, egestas sit amet massa. Praesent et facilisis nibh. Etiam quis magna libero. Ut eget mattis turpis. Nullam elementum et eros nec elementum.",
-          Array [
-            "
+          "
 ",
-          ],
         ],
+      ],
+      Array [
+        "Duis ex leo, finibus eget vulputate ac, commodo egestas magna. Ut tincidunt nisl et euismod aliquet. Nulla eget quam sit amet diam tincidunt gravida. Sed vel nisl ligula. Sed semper vitae dui sed maximus. Cras euismod libero leo, ac ultricies metus hendrerit vel. Nunc hendrerit sed lacus a pellentesque. Morbi pulvinar tortor purus, vitae ornare turpis tristique vel. Donec eget tortor nibh.",
         Array [
-          "Duis ex leo, finibus eget vulputate ac, commodo egestas magna. Ut tincidunt nisl et euismod aliquet. Nulla eget quam sit amet diam tincidunt gravida. Sed vel nisl ligula. Sed semper vitae dui sed maximus. Cras euismod libero leo, ac ultricies metus hendrerit vel. Nunc hendrerit sed lacus a pellentesque. Morbi pulvinar tortor purus, vitae ornare turpis tristique vel. Donec eget tortor nibh.",
-          Array [
-            "
+          "
 ",
-          ],
         ],
-        Array [
-          "Ut tempor, ligula id mattis scelerisque, ipsum dolor ultrices ipsum, vel auctor tellus neque ut lorem. Donec felis turpis, iaculis eget orci at, commodo volutpat ante. Nullam interdum nisi vitae convallis volutpat. Morbi at mi egestas, congue nunc eu, tincidunt mauris. Donec tincidunt risus consectetur nisl sollicitudin bibendum. Donec blandit purus vel massa facilisis euismod. Interdum et malesuada fames ac ante ipsum primis in faucibus. Suspendisse placerat mi nulla, quis eleifend sapien fringilla sit amet. Proin sed dignissim nisl. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Phasellus aliquam purus non vehicula posuere.",
-        ],
+      ],
+      Array [
+        "Ut tempor, ligula id mattis scelerisque, ipsum dolor ultrices ipsum, vel auctor tellus neque ut lorem. Donec felis turpis, iaculis eget orci at, commodo volutpat ante. Nullam interdum nisi vitae convallis volutpat. Morbi at mi egestas, congue nunc eu, tincidunt mauris. Donec tincidunt risus consectetur nisl sollicitudin bibendum. Donec blandit purus vel massa facilisis euismod. Interdum et malesuada fames ac ante ipsum primis in faucibus. Suspendisse placerat mi nulla, quis eleifend sapien fringilla sit amet. Proin sed dignissim nisl. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Phasellus aliquam purus non vehicula posuere.",
       ],
       "end",
     ],

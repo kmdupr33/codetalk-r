@@ -8,7 +8,7 @@ Slide -> Indent "slide" Newline Markdown Indent EndSlide {%
   data => [data[1]].concat(data[3]).concat(data[5])
 %}
 
-Markdown -> Blocks:+
+Markdown -> Blocks:+ {% id %}
 Blocks -> Block EmptyBlock:* {%
   // If there are no empty blocks, we don't want them 
   // showing up in the parse results
