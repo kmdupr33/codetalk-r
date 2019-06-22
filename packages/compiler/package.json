@@ -14,7 +14,9 @@
     "codetalkc": "codetalkc.js"
   },
   "license": "ISC",
-  "dependencies": {},
+  "dependencies": {
+    "moo": "^0.5.0"
+  },
   "devDependencies": {
     "chokidar-cli": "^1.2.2",
     "jest": "^24.8.0",

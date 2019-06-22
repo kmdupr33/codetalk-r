@@ -1,5 +1,5 @@
 const nearley = require("nearley");
-const grammar = require("./grammar");
+const grammar = require(".");
 const fs = require("fs");
 
 describe("codetalk", () => {
